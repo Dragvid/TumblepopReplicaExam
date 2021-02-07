@@ -10,11 +10,13 @@ public class Spawner : MonoBehaviour
     private float spawnTimer;
     public GameObject[] enemiesInScene;
     private int enemiesInSceneCount;
+    private SoundFxManager soundFxManager;
 
     void Start()
     {
         enemiesInSceneCount = 0;
         spawnTimer = spawnRate;
+        soundFxManager = gameObject.GetComponent<SoundFxManager>();
     }
     void Update()
     {
@@ -33,6 +35,7 @@ public class Spawner : MonoBehaviour
     }
     private void SpawnEnemy()
     {
+        soundFxManager.PlaySoundFx("shoot");
         int index = Random.Range(0, prefab.Length);
         Instantiate(prefab[index], transform.position, Quaternion.identity);
         spawnTimer = spawnRate;

@@ -6,6 +6,7 @@ public class SoundFxManager : MonoBehaviour
 {
     public AudioClip land;
     public AudioClip shoot;
+    public AudioClip hurt;
     private AudioSource audioSource;
     void Start()
     {
@@ -27,6 +28,9 @@ public class SoundFxManager : MonoBehaviour
                 break;
             case "shoot":
                 audioSource.PlayOneShot(shoot);
+                break;
+            case "hurt":
+                audioSource.PlayOneShot(hurt);
                 break;
         }
         

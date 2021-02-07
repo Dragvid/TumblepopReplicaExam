@@ -13,6 +13,7 @@ public class Killable : MonoBehaviour
     private Animator animator;
     private PlayerController playerMovement;
     private SuckEnemy playerSuckEnemy;
+    private SoundFxManager soundFxManager;
     private GameObject scoreText;
     SetScoreBehaviour setScore;
     void Start()
@@ -32,6 +33,7 @@ public class Killable : MonoBehaviour
         }
         animator = gameObject.GetComponent<Animator>();
         currentHitPoints = HitPoints;
+        soundFxManager = gameObject.GetComponent<SoundFxManager>();
     }
     void Update()
     {
@@ -39,6 +41,10 @@ public class Killable : MonoBehaviour
     }
     public void ChangeHitPoints(int change)
     {
+        if (change < 0)
+        {
+            soundFxManager.PlaySoundFx("hurt");
+        }
         if (!invulnerable)
         {
             if (animator != null)
