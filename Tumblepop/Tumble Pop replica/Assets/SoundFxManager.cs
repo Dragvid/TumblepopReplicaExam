@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class SoundFxManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public AudioClip land;
+    public AudioClip shoot;
+    private AudioSource audioSource;
     void Start()
     {
-
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -17,6 +19,16 @@ public class SoundFxManager : MonoBehaviour
     }
     public void PlaySoundFx(string sfx)
     {
-        FindObjectOfType<AudioManager>().Play(sfx);
+        //FindObjectOfType<AudioManager>().Play(land.name);
+        switch (sfx)
+        {
+            case "land":
+                audioSource.PlayOneShot(land);
+                break;
+            case "shoot":
+                audioSource.PlayOneShot(shoot);
+                break;
+        }
+        
     }
 }

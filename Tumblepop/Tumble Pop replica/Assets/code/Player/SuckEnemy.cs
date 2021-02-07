@@ -24,6 +24,7 @@ public class SuckEnemy : MonoBehaviour
     private GameObject ray;
     private GameObject tanq;
     private PlayerController dir;
+    private SoundFxManager soundFxManager;
     [HideInInspector]
     public int ammo;
     private float currentOverHeatTime;
@@ -42,6 +43,7 @@ public class SuckEnemy : MonoBehaviour
     {
         dir = gameObject.GetComponent<PlayerController>();
         currentOverHeatTime = overHeatTime;
+        soundFxManager = gameObject.GetComponent<SoundFxManager>();
     }
     void Update()
     {
@@ -137,6 +139,7 @@ public class SuckEnemy : MonoBehaviour
             shoot(dir.dirX,ammo,projectileShootForce);
             ammo = 0;
         }
+        soundFxManager.PlaySoundFx("shoot");
         Destroy(ray);
     }
 

@@ -30,15 +30,11 @@ public class PlayerController : MonoBehaviour
     private bool walkLeft;
     [HideInInspector]
     public bool isWalking;
-    //save inputs
-    /*public string[] playerInputs;
-    private int playerInputIndex;*/
-    //camera
-    //private GameObject cam;
     //components
     private Animator animator;
     private CapsuleCollider2D collider2D;
     private SpriteRenderer spriteRenderer;
+    private SoundFxManager soundFxManager;
     private GameObject[] atackOrigins;
     Rigidbody2D rb;
 
@@ -49,6 +45,7 @@ public class PlayerController : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         collider2D = gameObject.GetComponent<CapsuleCollider2D>();
         animator = gameObject.GetComponent<Animator>();
+        soundFxManager = gameObject.GetComponent<SoundFxManager>();
         speedIni = speed;
         //playerInputIndex = 0;
         dirX = 1;
@@ -163,18 +160,14 @@ public class PlayerController : MonoBehaviour
             playerDir.y = 0;
         }
     }
-    /*private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 8 || collision.gameObject.layer == 10)
         {
             //play landing sound
-            SoundFxManager soundplayer = soundFXManager.GetComponent<SoundFxManager>();
-            if (soundplayer != null)
-            {
-                soundplayer.PlaySoundFx("LandGrass");
-            }
+            soundFxManager.PlaySoundFx("land");
         }
-    }*/
+    }
     private void OnCollisionExit2D(Collision2D collision)
     {
         grounded = false;
