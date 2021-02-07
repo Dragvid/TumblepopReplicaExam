@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public GameObject feet;
     public LayerMask climbableLayers;
     public float climbDownRange;
+    //public GameObject soundFXManager;
     private float speedIni;
     private Vector3 playerDir;
     [HideInInspector]
@@ -162,6 +163,18 @@ public class PlayerController : MonoBehaviour
             playerDir.y = 0;
         }
     }
+    /*private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 8 || collision.gameObject.layer == 10)
+        {
+            //play landing sound
+            SoundFxManager soundplayer = soundFXManager.GetComponent<SoundFxManager>();
+            if (soundplayer != null)
+            {
+                soundplayer.PlaySoundFx("LandGrass");
+            }
+        }
+    }*/
     private void OnCollisionExit2D(Collision2D collision)
     {
         grounded = false;
