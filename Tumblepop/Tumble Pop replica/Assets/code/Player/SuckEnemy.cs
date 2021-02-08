@@ -139,12 +139,12 @@ public class SuckEnemy : MonoBehaviour
             shoot(dir.dirX,ammo,projectileShootForce);
             ammo = 0;
         }
-        soundFxManager.PlaySoundFx("shoot");
         Destroy(ray);
     }
 
     public void shoot(int direction,int ammo, float projectileforce)
     {
+        soundFxManager.PlaySoundFx("shoot");
         GameObject attackOrigin = null;
         if (direction == 1)
         {
