@@ -118,7 +118,7 @@ MonoBehaviour:
   prefab:
   - {fileID: 2604723145368273429, guid: 50f8deff60d577448a0dd906c3afeaca, type: 3}
   onScreenSize: 10
-  spawnRate: 300
+  spawnRate: 150
   enemiesInScene: []
 --- !u!114 &1971768609459752908
 MonoBehaviour:

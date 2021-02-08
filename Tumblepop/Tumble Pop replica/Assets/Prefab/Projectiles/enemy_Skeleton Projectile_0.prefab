@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 0
-  force: 10
+  force: 50
   direction: {x: 0, y: 0}
   bounces: 0
   onScreenStay: 10
