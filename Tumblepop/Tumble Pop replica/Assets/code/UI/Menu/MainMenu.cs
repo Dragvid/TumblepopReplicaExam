@@ -48,6 +48,10 @@ public class MainMenu : MonoBehaviour
         {
             Application.Quit();
         }
+        else
+        {
+            ReturnToMainMenu();
+        }
     }
     public void Tutorial()
     {
