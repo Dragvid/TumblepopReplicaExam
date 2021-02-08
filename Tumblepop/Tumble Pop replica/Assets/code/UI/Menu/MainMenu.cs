@@ -53,10 +53,6 @@ public class MainMenu : MonoBehaviour
             ReturnToMainMenu();
         }
     }
-    public void Tutorial()
-    {
-        SceneManager.LoadScene("CaseTutorial");
-    }
     public void ReturnToMainMenu()
     {
         bool open = false;
