@@ -40,15 +40,6 @@ public class AudioManager : MonoBehaviour
         //Debug.Log("clip lenght :"+s.clip.length);
         //Debug.Log("clip name :" + s.clip.name);
     }
-    public void Play2(int index)
-    {
-        //Sounds s = Array.Find(sounds, sounds => sounds.name == name);
-        if (sounds[index] == null)
-            return;
-        sounds[index].source.Play();
-        //Debug.Log("clip lenght :"+s.clip.length);
-        //Debug.Log("clip name :" + s.clip.name);
-    }
     public void VolumeUpdate(float newVolume)
     {
         foreach (Sounds s in sounds)
